@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-
 
 	char c;
 	int i;
