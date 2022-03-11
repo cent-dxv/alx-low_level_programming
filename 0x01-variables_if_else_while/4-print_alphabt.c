@@ -1,8 +1,11 @@
 #include <stdio.h>
-/** description
- * When I was having that alphabet soup,
- * I never thought that it would pay off
+/**
+ * main - main block
+ * Description: Print all numbers of base64 in lowercase.
+ * You can only use `putchar`
+ * Return: 0
  */
+
 int main(void)
 {
 	char alp = 'a';
