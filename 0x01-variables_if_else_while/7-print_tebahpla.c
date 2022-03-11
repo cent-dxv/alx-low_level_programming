@@ -2,10 +2,9 @@
 
 int main(void)
 {
-
 	char alp = 'z';
 
-	for (; alp >= 'a' ; alp--)
+	for (; alp >= 'a'; alp--)
 		putchar(alp);
 	putchar('\n');
 
