@@ -1,7 +1,7 @@
 #include <stdio.h>
 /* description
-* When I was having that alphabet soup,
-* I never thought that it would pay off
+ * When I was having that alphabet soup,
+ * I never thought that it would pay off
  */
 int main(void)
 {
