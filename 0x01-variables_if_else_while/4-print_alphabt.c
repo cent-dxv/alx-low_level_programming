@@ -1,5 +1,8 @@
 #include <stdio.h>
-/* description */
+/* description
+* When I was having that alphabet soup,
+* I never thought that it would pay off
+ */
 int main(void)
 {
 	char alp = 'a';
