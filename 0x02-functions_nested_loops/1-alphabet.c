@@ -1,19 +1,14 @@
-#include "main.h"
+#include <stdio.h>
 /**
- * print_alphabet_x10 - alphabet x10
-*/
-void print_alphabet_x10(void)
+ * print_alphabet - prints alphabet 
+ *
+ * Return: 0.
+ */
+void print_alphabet(void)
 {
-	int alphax10;
-	char alphax;
+	int x = 'a';
 
-	alphax10 = 0;
-	while (alphax10 < 10)
-	{
-	for (alphax = 'a'; alphax <= 'z'; alphax++)
-
-	_putchar (alphax);
-	alphax10++;
-	_putchar ('\n');
-	}
+	for (x = 'a'; x <= 'z'; x++)
+		_putchar(a);
+	_putchar('\n');
 }
