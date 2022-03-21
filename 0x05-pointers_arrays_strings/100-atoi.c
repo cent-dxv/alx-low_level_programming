@@ -1,29 +1,28 @@
-#include "holberton.h"
+#include "main.h"
+
 /**
- * _atoi - int
- * @s: pointer
- * Return: int.
+ * _atoi - convert to a int
+ * @s:string
+ * Return:int
  */
+
 int _atoi(char *s)
 {
-	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+int i, j, n, x;
 
-	for (i = 0; s[i] != '\0'; i++)
+	i = n = 0;
+	x = 1;
+	while ((s[i] < '0' || s[i] > '9') && (s[i] != '\0'))
 	{
 		if (s[i] == '-')
-			sig = sig * -1;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
-		}
-		else if (brk == 1)
-			break;
+			x *= -1;
+		i++;
 	}
-	// res = sig * res;
-	return (sig * res);
+	j = i;
+	while ((s[j] >= '0') && (s[j] <= '9'))
+	{
+		n = (n * 10) + x * ((s[j]) - '0');
+		j++;
+	}
+	return (n);
 }
