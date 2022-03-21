@@ -24,7 +24,6 @@ int _atoi(char *s)
 		else if (brk == 1)
 			break;
 	}
-	res = sig * res;
-	
-	return (res);
+	// res = sig * res;
+	return (sig * res);
 }
