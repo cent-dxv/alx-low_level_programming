@@ -1,51 +1,72 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+
+
 /**
- * main - Prints the minimum number of coins
- * @argc: The number of arguments
- * @argv: An array of pointers to the arguments
- * Return: if no of arg = 1, 1, otherwise 0
+ * _isnumber - checks if string is a number
+ * @s: string
+ *
+ * Return: On success 1.
+ * If not a number, 0 is returned.
  */
-
-int main(int argc, char *argv[])
+int _isnumber(char *s)
 {
-	int cents, coins = 0;
+	int i, check, d;
 
-	if (argc != 2)
+	i = 0, d = 0, check = 1;
+	if (*s == '-')
+		i++;
+	for (; *(s + i) != 0; i++)
 	{
-		printf("Error\n");
-		return (1);
+		d = isdigit(*(s + i));
+		if (d == 0)
+		{
+			check = 0;
+			break;
+		}
 	}
+	return (check);
+}
+/**
+ * main - Entry point
+ *
+ * @argc: Counts the number of parameters that go into main
+ * @argv: Pointer of array of pointers containing strings entering main
+ * Return: Always 0 (Success)
+ */
+int main(int argc, char **argv)
+{
+	int j, ex, coins, cents, d;
+	int c[5] = {25, 10, 5, 2, 1};
 
-	cents = atoi(argv[1]);
-
-	while (cents > 0)
+	ex = 1, j = 0, coins = 0;
+	if (argc == 2)
 	{
-		coins++;
-		if ((cents - 25) >= 0)
+		if (_isnumber(argv[1]))
 		{
-			cents -= 25;
-			continue;
+			ex = 0, cents = atoi(argv[1]);
+			if (cents >= 0)
+			{
+				while (cents != 0)
+				{
+					d = cents / c[j];
+					if (d == 0)
+					{
+						j++;
+					}
+					else
+					{
+						coins += d;
+						cents -= (d * c[j]);
+					}
+				}
+			}
 		}
-		if ((cents - 10) >= 0)
-		{
-			cents -= 10;
-			continue;
-		}
-		if ((cents - 5) >= 0)
-		{
-			cents -= 5;
-			continue;
-		}
-		if ((cents - 2) >= 0)
-		{
-			cents -= 2;
-			continue;
-		}
-		cents--;
 	}
-
-	printf("%d\n", coins);
-	return (0);
+	if (ex == 0)
+		printf("%i\n", coins);
+	else
+		printf("%s\n", "Error");
+	return (ex);
 }
